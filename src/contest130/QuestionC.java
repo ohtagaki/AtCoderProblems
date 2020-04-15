@@ -10,6 +10,7 @@ public class QuestionC {
 		double H = sc.nextDouble();
 		double a = sc.nextDouble();
 		double b = sc.nextDouble();
+		sc.close();
 
 		double half = W * H / 2;
 		System.out.print(half + " ");
@@ -20,5 +21,4 @@ public class QuestionC {
 			System.out.print(0);
 		}
 	}
-
 }
