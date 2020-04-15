@@ -1,10 +1,24 @@
 package contest130;
 
+import java.util.Scanner;
+
 public class QuestionC {
 
 	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
+		Scanner sc = new Scanner(System.in);
+		double W = sc.nextDouble();
+		double H = sc.nextDouble();
+		double a = sc.nextDouble();
+		double b = sc.nextDouble();
 
+		double half = W * H / 2;
+		System.out.print(half + " ");
+
+		if((a == W / 2) && (b == H / 2)) {
+			System.out.print(1);
+		}else {
+			System.out.print(0);
+		}
 	}
 
 }
