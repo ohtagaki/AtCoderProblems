@@ -17,22 +17,17 @@ public class QuestionD {
 			totalValue += A[i];
 		}
 		sc.close();
-		int lastNoneValue = 0;
-		for(int i = N - 2; i > 0; i -= 2) {
-			lastNoneValue += 2 * A[i];
+		
+		for(int i = 1; i < N - 1; i += 2) {
+			totalValue -= 2 * A[i];
 		}
+		
+		answer[0] = totalValue;
+		System.out.print(answer[0]);
 
-		for(int i = 0; i < N; i++) {
-			if(i == 0) {
-				answer[i] = totalValue - lastNoneValue;
-			}else {
-				answer[i] = 2 * A[ i - 1] - answer[i -1];
-			}
-			if(i == N - 1) {
-				System.out.print(answer[i]);
-			}else {
-				System.out.print(answer[i] + " ");
-			}
+		for(int i = 1; i < N; i++) {
+			answer[i] = 2 * A[ i - 1] - answer[i -1];
+			System.out.print(" " + answer[i]);
 		}
 	}
 }
