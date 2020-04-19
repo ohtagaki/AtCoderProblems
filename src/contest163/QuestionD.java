@@ -19,7 +19,6 @@ public class QuestionD {
 		}
 
 		long answer = count % mod;
-		int ans = (int) answer;
 		System.out.println(answer);
 	}
 
