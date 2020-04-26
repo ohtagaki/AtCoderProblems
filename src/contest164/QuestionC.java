@@ -17,12 +17,11 @@ public class QuestionC {
 		sc.close();
 
 		//重複を除いたリストを作成
+		//そのため(LinkedHash)Setクラス使用
 		for(int i = 0; i < N; i++) {
 			 list.add(S[i]);
 		}
-
 		System.out.println(list.size());
-
 	}
 
 }
