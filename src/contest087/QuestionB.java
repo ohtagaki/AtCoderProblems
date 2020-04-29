@@ -26,5 +26,4 @@ public class QuestionB {
 		}
 		System.out.println(count);
 	}
-
 }
