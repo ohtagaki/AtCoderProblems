@@ -1,0 +1,23 @@
+package contest028;
+
+import java.util.Scanner;
+
+public class QuestionA {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = Integer.parseInt(sc.next());
+		sc.close();
+
+		if( N <= 59) {
+			System.out.println("Bad");
+		}else if(60 <= N && N <= 89) {
+			System.out.println("Good");
+		}else if(90 <= N && N <= 99) {
+			System.out.println("Great");
+		}else {
+			System.out.println("Perfect");
+		}
+
+	}
+}
