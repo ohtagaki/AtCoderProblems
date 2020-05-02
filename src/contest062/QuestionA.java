@@ -20,7 +20,6 @@ public class QuestionA {
 		listA.add(8);
 		listA.add(10);
 		listA.add(12);
-
 		listB.add(4);
 		listB.add(6);
 		listB.add(9);
