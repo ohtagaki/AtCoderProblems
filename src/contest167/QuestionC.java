@@ -1,6 +1,5 @@
 package contest167;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class QuestionC {
@@ -12,64 +11,43 @@ public class QuestionC {
 		int X = Integer.parseInt(sc.next());
 		int[] C = new int[N];
 		int[][] A = new int[N][M];
-		int[] sat = new int[M];
-		int cost = 0;
+		int cost = Integer.MAX_VALUE;
 		for(int i = 0; i < N; i++) {
 			C[i] = Integer.parseInt(sc.next());
-			cost += C[i];
 			for(int j = 0; j < M; j++) {
 				A[i][j] = Integer.parseInt(sc.next());
-				sat[j] = 0;
 			}
 		}
 		sc.close();
 
-		for(int i = 0; i < N; i++) {
-			boolean[] check = new boolean[M];
-			Arrays.fill(check, false);
-			Arrays.fill(sat, 0);
+		//ビット全探索
+		//各参考書が2進数の各桁に一致
+		for(int i = 0; i < (1 << N); i++) {
 			int tmpCost = 0;
-			for(int j = 0; j < M; j++) {
-				tmpCost += C[i];
-				sat[j] += A[i][j];
-				if(sat[j] >= X) {
-					check[j] = true;
+			int[] satisfaction = new int[M];
+			for(int j = 0; j < N; j++) {
+				//各参考書を買うか買わないかで条件分岐
+				if((i >> j & 1) == 1) {
+					tmpCost += C[j];
+					for(int k = 0; k < M; k++) {
+						satisfaction[k] += A[j][k];
+					}
 				}
-				if(!Arrays.asList(check).contains(false)) {
-					cost = tmpCost;
-					continue;
+			}
+			boolean check = true;
+			//各アルゴリズムの理解度の確認
+			for(int j = 0; j < M; j++) {
+				if(satisfaction[j] < X) {
+					check = false;
 				}
 			}
 
-			for(int k = i + 1; k < N; k++) {
-				for(int x = k; x < N; x++) {
-					for(int l = 0; l < M; l++) {
-						tmpCost += C[x];
-						sat[l] += A[x][l];
-						if(sat[l] >= X) {
-							check[l] = true;
-						}
-					}
-					if(!Arrays.asList(check).contains(false)) {
-						if(cost > tmpCost) {
-							cost = tmpCost;
-						}
-						tmpCost = 0;
-						for(int j = 0; j < M; j++) {
-							tmpCost += C[i];
-							sat[j] += A[i][j];
-							if(sat[j] >= X) {
-								check[j] = true;
-							}
-						}
-						continue;
-					}
-				}
+			//コストの比較
+			if(check) {
+				cost = Math.min(cost, tmpCost);
 			}
 		}
-		System.out.println(cost);
-
-
+		//答えを出力
+		System.out.println(cost != Integer.MAX_VALUE ? cost : -1);
 	}
-
 }
