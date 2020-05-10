@@ -1,10 +1,20 @@
 package contest167;
 
+import java.util.Scanner;
+
 public class QuestionA {
 
 	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
+		Scanner sc = new Scanner(System.in);
+		String S = sc.next();
+		String T = sc.next();
+		sc.close();
+
+		if(S.equals(T.substring(0, T.length() - 1)) && T.length() == S.length() + 1) {
+			System.out.println("Yes");
+		}else {
+			System.out.println("No");
+		}
 
 	}
-
 }
