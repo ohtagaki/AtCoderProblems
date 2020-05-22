@@ -14,6 +14,8 @@ public class QuestionB {
 		}
 		sc.close();
 		Arrays.sort(d);
+
+		//コレクションのSetインタフェースを使うのも一手
 		int count = 1;
 		int bottom = d[N - 1];
 		for(int i = N - 2; i >= 0; i--) {
