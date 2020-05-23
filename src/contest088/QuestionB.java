@@ -1,6 +1,7 @@
 package contest088;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class QuestionB {
@@ -8,20 +9,20 @@ public class QuestionB {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N = Integer.parseInt(sc.next());
-		int[] a = new int[N];
+		ArrayList<Integer> list = new ArrayList<>();
 		for(int i = 0; i < N; i++) {
-			a[i] = Integer.parseInt(sc.next());
+			list.add(Integer.parseInt(sc.next()));
 		}
 		sc.close();
-		Arrays.sort(a);
+		Collections.sort(list, Collections.reverseOrder());
 		int count = 0;
 		int alice = 0;
 		int bob = 0;
-		for(int i = N - 1; i >= 0; i--) {
+		for(int i = 0; i < list.size(); i++) {
 			if(count % 2 == 0) {
-				alice += a[i];
+				alice += list.get(i);
 			}else {
-				bob += a[i];
+				bob += list.get(i);
 			}
 			count++;
 		}
