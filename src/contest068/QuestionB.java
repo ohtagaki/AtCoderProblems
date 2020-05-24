@@ -9,7 +9,6 @@ public class QuestionB {
 		int N = Integer.parseInt(sc.next());
 		sc.close();
 
-		int count = 0;
 		int ans = 0;
 		for(int i = 0; i <= 7; i++) {
 			int tmp = (int) Math.floor(Math.pow(2, i));
