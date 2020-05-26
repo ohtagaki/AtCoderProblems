@@ -1,5 +1,6 @@
 package contest081;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class QuestionB {
@@ -7,17 +8,18 @@ public class QuestionB {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N = Integer.parseInt(sc.next());
-		long[] A = new long[N];
+		ArrayList<Integer> list = new ArrayList<>();
 		for(int i = 0; i < N; i++) {
-			A[i] = sc.nextLong();
+			list.add(Integer.parseInt(sc.next()));
 		}
 		sc.close();
 
 		int answer = Integer.MAX_VALUE;
 		for(int i = 0; i < N; i++) {
 			int count = 0;
-			while(A[i] % 2 == 0) {
-				A[i] = A[i] / 2;
+			int tmp = list.get(i);
+			while(tmp % 2 == 0) {
+				tmp = tmp / 2;
 				count++;
 			}
 			if(answer >= count) {
