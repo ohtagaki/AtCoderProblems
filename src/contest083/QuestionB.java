@@ -22,13 +22,11 @@ public class QuestionB {
 		}
 
 		private static int sum(int i) {
-			int ri = 0;
-
-			while(i>0) {
-				ri +=i%10;
-				i/=10;
+			int sumDigits = 0;
+			while( i != 0) {
+				sumDigits += i % 10;
+				i /= 10;
 			}
-			return ri;
+			return sumDigits;
 		}
-
-	}
+}
