@@ -9,6 +9,7 @@ public class QuestionC {
 		long A = Long.parseLong(sc.next());
 		String str = sc.next();
 
+		//ああ
 		int[] tmp = new int[3];
 		tmp[0] = Integer.parseInt(String.valueOf(str.charAt(0)));
 		tmp[1] = Integer.parseInt(String.valueOf(str.charAt(2)));
