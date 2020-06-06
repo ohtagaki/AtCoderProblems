@@ -10,7 +10,7 @@ public class QuestionB {
 		int B = Integer.parseInt(sc.next());
 		String S = sc.next();
 		sc.close();
-		
+
 		boolean check = true;
 		for(int i = 0; i < S.length(); i++) {
 			if(i == A) {
