@@ -13,29 +13,24 @@ public class QuestionB {
 			list.add(Integer.parseInt(sc.next()));
 		}
 		sc.close();
-		boolean check = true;
-		for(int i = 0; i < N; i++) {
-			int num = list.get(i);
-			//偶数かどうかcheck
-			if(num % 2 == 0) {
-				//3の倍数or5の倍数かどうかcheck
-				if(num % 3 != 0 && num % 5 != 0) {
-					//フラグをfalseに変更
-					check = false;
-					//ループ終了
-					break;
-				}else {
-					continue;
-				}
-			}else {
-				continue;
-			}
-		}
-		if(check) {
-			System.out.println("APPROVED");
-		}else {
-			System.out.println("DENIED");
-		}
-	}
 
+		boolean check = true;
+
+		//条件分岐
+		for(int i = 0; i < list.size(); i++) {
+			int number = list.get(i);
+			if(number % 2 != 0) {
+				continue;
+			}else if(number % 6 == 0 || number % 10 == 0) {
+				continue;
+			}else {
+				System.out.println("DENIED");
+				check = false;
+				return;
+			}
+
+		}
+		if(check) System.out.println("APPROVED");
+
+	}
 }
