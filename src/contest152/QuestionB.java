@@ -11,26 +11,23 @@ public class QuestionB {
 	*/
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int a = Integer.parseInt(sc.next());
-		int b = Integer.parseInt(sc.next());
+		String a = sc.next();
+		String b = sc.next();
 		sc.close();
-
-		StringBuffer sbA = new StringBuffer();
-		StringBuffer sbB = new StringBuffer();
-		for(int i = 0; i < b; i++) {
-			String S = String.valueOf(a);
-			sbA.append(S);
-		}
-		for(int i = 0; i < a; i++) {
-			String S = String.valueOf(b);
-			sbB.append(S);
-		}
-		String A = sbA.toString();
-		String B = sbB.toString();
-		if(a < b) {
-			System.out.println(A);
+		
+		int A = Integer.parseInt(a);
+		int B = Integer.parseInt(b);
+		
+		StringBuffer ans = new StringBuffer();
+		if(A < B) {
+			for(int i = 0; i < B; i++) {
+					ans.append(A);
+			}
 		}else {
-			System.out.println(B);
+			for(int i = 0; i < A; i++) {
+					ans.append(B);
+			}
 		}
+		System.out.println(ans.toString());
 	}
 }
