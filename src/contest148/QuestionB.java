@@ -11,13 +11,15 @@ public class QuestionB {
 		String T = sc.next();
 		sc.close();
 
-		//StringBufferによる文字列連結
 		StringBuffer sb = new StringBuffer();
 		for(int i = 0; i < N; i++) {
-			sb.append(S.charAt(i));
-			sb.append(T.charAt(i));
+			char tmpS = S.charAt(i);
+			sb.append(tmpS);
+			char tmpT = T.charAt(i);
+			sb.append(tmpT);
 		}
-		System.out.println(sb.toString());
+		String ans = sb.toString();
+		System.out.println(ans);
 
 	}
 
