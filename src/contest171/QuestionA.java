@@ -23,6 +23,7 @@ public class QuestionA {
 			ans += list.get(i);
 		}
 		System.out.println(ans);
+
 	}
 
 }
